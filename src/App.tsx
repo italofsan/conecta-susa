@@ -1,3 +1,11 @@
+import { CssBaseline } from "@mui/material";
+import { Routes } from "./routes";
+
 export const App = () => {
-  return <div className="App">Learn React</div>;
+  return (
+    <>
+      <CssBaseline />
+      <Routes />
+    </>
+  );
 };
