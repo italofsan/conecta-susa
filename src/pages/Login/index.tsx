@@ -1,17 +1,20 @@
-import { Grid } from "@mui/material";
-import backgroundImage from "../../assets/images/background-image.png";
+import { Button, Grid, Toolbar } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const navigate = useNavigate();
+
+  const fakeLogin = () => {
+    localStorage.setItem("signed", JSON.stringify(true));
+    navigate("/home");
+  };
+
   return (
-    <div
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        height: "100vh",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <Grid container>Login</Grid>
-    </div>
+    <>
+      <Toolbar />
+      <Grid container>
+        <Button onClick={fakeLogin}>Entrar</Button>
+      </Grid>
+    </>
   );
 };
