@@ -50,7 +50,7 @@ export const AuthLayout = ({ children }: AuthLayoutProps) => {
             <ListItemText primary="Home" />
           </ListItemButton>
         </ListItem>
-        {navItems.map((item) => (
+        {/* {navItems.map((item) => (
           <ListItem
             key={item.title}
             disablePadding
@@ -60,7 +60,7 @@ export const AuthLayout = ({ children }: AuthLayoutProps) => {
               <ListItemText primary={item.title} />
             </ListItemButton>
           </ListItem>
-        ))}
+        ))} */}
         <ListItem disablePadding onClick={() => navigate("/login")}>
           <ListItemButton sx={{ textAlign: "center" }}>
             <ListItemText primary="Login" />
@@ -101,7 +101,7 @@ export const AuthLayout = ({ children }: AuthLayoutProps) => {
             <Button sx={{ color: "#14532D" }} onClick={() => navigate("/")}>
               Home
             </Button>
-            {navItems.map((item) => (
+            {/* {navItems.map((item) => (
               <Button
                 key={item.title}
                 sx={{ color: "#14532D" }}
@@ -109,7 +109,7 @@ export const AuthLayout = ({ children }: AuthLayoutProps) => {
               >
                 {item.title}
               </Button>
-            ))}
+            ))} */}
             <Button sx={{ color: "#fff" }} onClick={() => navigate("/login")}>
               Login
             </Button>

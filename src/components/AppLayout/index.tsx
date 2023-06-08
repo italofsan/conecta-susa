@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import {
   GroupOutlined as UsersIcon,
+  ExitToAppOutlined as ExitIcon,
   HomeOutlined as HomeOutlinedIcon,
   PetsOutlined as PetsOutlinedIcon,
   FactCheckOutlined as FactCheckOutlinedIcon,
@@ -22,12 +23,12 @@ import {
   StickyNote2Outlined as StickyNote2OutlinedIcon,
   AccountCircleOutlined as AccountCircleOutlinedIcon,
   MedicalServicesOutlined as MedicalServicesOutlinedIcon,
-  ExitToAppOutlined as ExitIcon,
 } from "@mui/icons-material";
-
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { useStyles } from "./styles";
+
+import logoImage from "../../assets/images/logo-image.png";
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -173,11 +174,14 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
             key={item.itemTitle}
             to={item.itemLocation}
             component={Link}
-            selected={location.pathname.includes(item.itemLocation)}
+            // selected={location.pathname.includes(item.itemLocation)}
             style={{
               color: location.pathname.includes(item.itemLocation)
-                ? "#63BFE7"
+                ? "#14532D"
                 : "#4F4F4F",
+              backgroundColor: location.pathname.includes(item.itemLocation)
+                ? "#86EFAC"
+                : "#FFF",
             }}
           >
             {item.icon}
@@ -208,7 +212,12 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
             justifyContent: "space-between",
           }}
         >
-          Logo
+          <div
+            style={{ width: 130, cursor: "pointer" }}
+            onClick={() => navigate("/home")}
+          >
+            <img src={logoImage} alt="logo" style={{ width: "100%" }} />
+          </div>
           <div
             style={{
               display: "flex",
@@ -217,15 +226,13 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
             }}
           >
             <Typography style={{ color: "#1C1C1C", marginRight: 12 }}>
-              Olá, Lorem Ipsum
+              Olá, Administrador
             </Typography>
             <Tooltip title="Sair">
               <IconButton
                 aria-label="sair"
                 onClick={() => {
                   localStorage.setItem("signed", JSON.stringify(false));
-                  // setIsSigned(false);
-                  // navigate("/");
                   window.location.reload();
                 }}
               >
