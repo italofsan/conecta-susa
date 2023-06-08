@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import {
   Button,
   Grid,
@@ -30,15 +30,15 @@ interface LoginData {
 }
 
 export const Login = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { classes } = useStyles();
   const { setIsSigned } = useContext(AuthUserContext);
 
-  const [loginData, setLoginData] = useState<LoginData>({
+  const loginData: LoginData = {
     cpf: "",
     cnpj: "",
     password: "",
-  });
+  };
 
   const [showPassword, setShowPassword] = useState(false);
 

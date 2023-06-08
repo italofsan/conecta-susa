@@ -13,17 +13,16 @@ import {
   Toolbar,
   Typography,
   Button,
-  Grid,
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { useStyles } from "./styles";
 
 import backgroundImage from "../../assets/images/background-image.png";
-import homepageImage from "../../assets/images/homepage-image.png";
-import homepageTitleImage from "../../assets/images/homepage-title-image.png";
+// import homepageImage from "../../assets/images/homepage-image.png";
+// import homepageTitleImage from "../../assets/images/homepage-title-image.png";
 
 const drawerWidth = 240;
-const navItems = [{ title: "Sobre" }, { title: "Ajuda" }];
+// const navItems = [{ title: "Sobre" }, { title: "Ajuda" }];
 
 type AuthLayoutProps = {
   children: ReactNode;
