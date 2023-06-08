@@ -4,14 +4,14 @@ export type Animal = {
   race: string;
   species: string;
   owner: string;
-  sex: string;
+  sex: "M" | "F";
   coat: string;
   weight: string;
   dateOfBirth: string;
-  size: "small" | "medium" | "large";
+  size: "Pequeno" | "Médio" | "Grande";
   comments: string;
   allergies: string;
-  castrated: string;
+  castrated: "Sim" | "Não";
   createdAt: Date;
 };
 

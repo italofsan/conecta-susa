@@ -8,6 +8,7 @@ import { useStyles } from "./styles";
 import { Client } from "../../types";
 import { TableActions } from "../../components/TableActions";
 import { mockedListClient } from "../../database";
+import { successMessage } from "../../components/Messages";
 
 export const Clients = () => {
   const { classes } = useStyles();
@@ -75,17 +76,9 @@ export const Clients = () => {
         renderCell: (params: GridRenderCellParams) => (
           <TableActions
             params={params}
-            viewFunction={() =>
-              navigate(`/clients/${params.row.id}`, {
-                state: { client: params.row },
-              })
-            }
-            editFunction={() =>
-              navigate(`/clients/${params.row.id}/edit`, {
-                state: { client: params.row },
-              })
-            }
-            deleteFunction={() => console.log(params.row.id)}
+            viewFunction={() => navigate(`/clients/${params.row.id}`)}
+            editFunction={() => navigate(`/clients/${params.row.id}/edit`)}
+            deleteFunction={() => successMessage("Dado excluído com sucesso!")}
           />
         ),
       },

@@ -8,6 +8,7 @@ import { useStyles } from "./styles";
 import { Animal } from "../../../types";
 import { TableActions } from "../../../components/TableActions";
 import { mockedListAnimal } from "../../../database";
+import { successMessage } from "../../../components/Messages";
 
 export const ListAnimals = () => {
   const { classes } = useStyles();
@@ -23,14 +24,14 @@ export const ListAnimals = () => {
         disableColumnMenu: true,
       },
       {
-        field: "race",
-        headerName: "Raça",
+        field: "species",
+        headerName: "Espécie",
         flex: 1,
         disableColumnMenu: true,
       },
       {
-        field: "species",
-        headerName: "Espécie",
+        field: "race",
+        headerName: "Raça",
         flex: 1,
         disableColumnMenu: true,
       },
@@ -82,7 +83,7 @@ export const ListAnimals = () => {
             params={params}
             viewFunction={() => navigate(`/animals/${params.row.id}`)}
             editFunction={() => navigate(`/animals/${params.row.id}/edit`)}
-            deleteFunction={() => console.log(params.row.id)}
+            deleteFunction={() => successMessage("Dado excluído com sucesso!")}
           />
         ),
       },

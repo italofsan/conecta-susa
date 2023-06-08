@@ -33,7 +33,6 @@ export const ClientRegister = () => {
   const navigate = useNavigate();
   const { classes } = useStyles();
   const { id } = useParams();
-  // const [locationState, setLocationState] = useState<any>();
 
   const [clientData, setClientData] = useState<ClientData>({
     id: 0,
@@ -54,16 +53,10 @@ export const ClientRegister = () => {
 
   const addClient = async (clientData: ClientData) => {
     try {
-      // await api.post("users", {
-      //   nome: clientData.name,
-      //   cpf: onlyNumbers(clientData.cpf),
-      //   documento: clientData.document,
-      //   email: clientData.email,
-      //   telefone: onlyNumbers(clientData.phone),
-      //   status: clientData.status === "Ativo",
-      // });
-      navigate("/clients");
-      successMessage("Cliente adicionado com sucesso!");
+      setTimeout(() => {
+        navigate("/clients");
+        successMessage("Cliente adicionado com sucesso!");
+      }, 1500);
     } catch (error) {
       errorMessage("Não foi possível adicionar cliente");
     }
@@ -71,33 +64,28 @@ export const ClientRegister = () => {
 
   const updateClient = async (clientData: ClientData) => {
     try {
-      // await api.patch(`users/${id}`, {
-      //   nome: clientData.name,
-      //   cpf: clientData.cpf,
-      //   documento: clientData.document,
-      //   email: clientData.email,
-      //   telefone: clientData.phone,
-      //   status: clientData.status === "Ativo",
-      // });
-      navigate("/clients");
-      successMessage("Cliente atualizado com sucesso!");
+      setTimeout(() => {
+        navigate("/clients");
+        successMessage("Cliente atualizado com sucesso!");
+      }, 1500);
     } catch (error) {
       errorMessage("Não foi possível atualizar cliente");
     }
   };
 
   useEffect(() => {
-    console.log(id);
-    let listClientCopy = [...mockedListClient];
-    listClientCopy = listClientCopy.filter(
-      (client) => client.id === Number(id)
-    );
-    setClientData({
-      id: listClientCopy[0].id,
-      name: listClientCopy[0].name,
-      cpf: listClientCopy[0].cpf,
-      phone: listClientCopy[0].phone,
-    });
+    if (id) {
+      let listClientCopy = [...mockedListClient];
+      listClientCopy = listClientCopy.filter(
+        (client) => client.id === Number(id)
+      );
+      setClientData({
+        id: listClientCopy[0].id,
+        name: listClientCopy[0].name,
+        cpf: listClientCopy[0].cpf,
+        phone: listClientCopy[0].phone,
+      });
+    }
   }, [id]);
 
   return (
@@ -197,6 +185,7 @@ export const ClientRegister = () => {
                       size="small"
                       fullWidth
                       required
+                      color="success"
                       disabled={!inCreationOrEditing(location)}
                     />
                   </Grid>
@@ -211,6 +200,7 @@ export const ClientRegister = () => {
                       size="small"
                       fullWidth
                       required
+                      color="success"
                       disabled={!inCreationOrEditing(location)}
                       InputProps={{
                         inputComponent: InputMask as any,
@@ -287,6 +277,7 @@ export const ClientRegister = () => {
                       variant="outlined"
                       size="small"
                       fullWidth
+                      color="success"
                       disabled={!inCreationOrEditing(location)}
                       InputProps={{
                         inputComponent: InputMask as any,
