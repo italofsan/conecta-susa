@@ -1,8 +1,7 @@
-import { ReactNode, useContext } from "react";
+import { ReactNode } from "react";
 
 import {
   AppBar,
-  Divider,
   Drawer,
   IconButton,
   List,
@@ -152,7 +151,6 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
   const { classes } = useStyles();
   const location = useLocation();
   const navigate = useNavigate();
-  // const { setIsSigned } = useContext(AuthUserContext);
 
   const drawer = (
     <div>
@@ -162,9 +160,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
         </Typography>
         <ExitIcon
           onClick={() => {
-            localStorage.setItem("signed", JSON.stringify(false));
-            navigate("/");
-            window.location.reload();
+            localStorage.clear();
           }}
         />
       </Toolbar>

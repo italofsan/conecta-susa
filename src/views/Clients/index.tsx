@@ -7,6 +7,7 @@ import { Add as AddIcon, Delete as DeleteIcon } from "@mui/icons-material";
 import { useStyles } from "./styles";
 import { Client } from "../../types";
 import { TableActions } from "../../components/TableActions";
+import { mockedListClient } from "../../database";
 
 export const Clients = () => {
   const { classes } = useStyles();
@@ -107,7 +108,7 @@ export const Clients = () => {
               <Button
                 startIcon={<AddIcon />}
                 className={classes.buttonRegister}
-                onClick={() => navigate("/animals/new")}
+                onClick={() => navigate("/clients/new")}
               >
                 Cadastrar
               </Button>
@@ -138,66 +139,3 @@ export const Clients = () => {
     </Grid>
   );
 };
-
-const mockedListClient: Client[] = [
-  {
-    id: 1,
-    name: "John Doe",
-    cpf: "123.456.789-01",
-    phone: "(12) 34567-8901",
-  },
-  {
-    id: 2,
-    name: "Jane Smith",
-    cpf: "987.654.321-02",
-    phone: "(98) 76543-2102",
-  },
-  {
-    id: 3,
-    name: "Alice Johnson",
-    cpf: "456.123.789-03",
-    phone: "(45) 61234-7890",
-  },
-  {
-    id: 4,
-    name: "Bob Anderson",
-    cpf: "789.123.456-04",
-    phone: "(78) 91234-5604",
-  },
-  {
-    id: 5,
-    name: "Sarah Williams",
-    cpf: "321.654.987-05",
-    phone: "(32) 16549-8705",
-  },
-  {
-    id: 6,
-    name: "Michael Brown",
-    cpf: "654.789.123-06",
-    phone: "(65) 47891-2306",
-  },
-  {
-    id: 7,
-    name: "Emily Davis",
-    cpf: "987.321.654-07",
-    phone: "(98) 73216-5407",
-  },
-  {
-    id: 8,
-    name: "David Johnson",
-    cpf: "456.789.123-08",
-    phone: "(45) 67891-2308",
-  },
-  {
-    id: 9,
-    name: "Olivia Martinez",
-    cpf: "123.987.456-09",
-    phone: "(12) 39874-5609",
-  },
-  {
-    id: 10,
-    name: "Daniel Wilson",
-    cpf: "789.456.123-10",
-    phone: "(78) 94561-2310",
-  },
-];

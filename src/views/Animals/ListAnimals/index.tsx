@@ -7,6 +7,7 @@ import { Add as AddIcon, Delete as DeleteIcon } from "@mui/icons-material";
 import { useStyles } from "./styles";
 import { Animal } from "../../../types";
 import { TableActions } from "../../../components/TableActions";
+import { mockedListAnimal } from "../../../database";
 
 export const ListAnimals = () => {
   const { classes } = useStyles();
@@ -22,7 +23,7 @@ export const ListAnimals = () => {
         disableColumnMenu: true,
       },
       {
-        field: "breed",
+        field: "race",
         headerName: "Raça",
         flex: 1,
         disableColumnMenu: true,
@@ -118,8 +119,6 @@ export const ListAnimals = () => {
           <DataGrid
             rows={mockedListAnimal}
             columns={columns}
-            // loading={loading}
-            // checkboxSelection
             disableRowSelectionOnClick
             hideFooterSelectedRowCount
             // components={{
@@ -137,76 +136,3 @@ export const ListAnimals = () => {
     </Grid>
   );
 };
-
-const mockedListAnimal: Animal[] = [
-  {
-    id: 1,
-    name: "Bella",
-    breed: "Labrador Retriever",
-    species: "Cachorro",
-    owner: "João Silva",
-  },
-  {
-    id: 2,
-    name: "Simba",
-    breed: "Persa",
-    species: "Gato",
-    owner: "Maria Souza",
-  },
-  {
-    id: 3,
-    name: "Rocky",
-    breed: "Golden Retriever",
-    species: "Cachorro",
-    owner: "Miguel Ferreira",
-  },
-  {
-    id: 4,
-    name: "Luna",
-    breed: "Siamês",
-    species: "Gato",
-    owner: "Ana Rodrigues",
-  },
-  {
-    id: 5,
-    name: "Max",
-    breed: "Pastor Alemão",
-    species: "Cachorro",
-    owner: "Pedro Almeida",
-  },
-  {
-    id: 6,
-    name: "Coco",
-    breed: "Maine Coon",
-    species: "Gato",
-    owner: "Isabela Oliveira",
-  },
-  {
-    id: 7,
-    name: "Charlie",
-    breed: "Bulldog",
-    species: "Cachorro",
-    owner: "Laura Santos",
-  },
-  {
-    id: 8,
-    name: "Milo",
-    breed: "Ragdoll",
-    species: "Gato",
-    owner: "Gabriel Costa",
-  },
-  {
-    id: 9,
-    name: "Bailey",
-    breed: "Beagle",
-    species: "Cachorro",
-    owner: "Sophia Rocha",
-  },
-  {
-    id: 10,
-    name: "Kitty",
-    breed: "Scottish Fold",
-    species: "Gato",
-    owner: "Daniel Santos",
-  },
-];

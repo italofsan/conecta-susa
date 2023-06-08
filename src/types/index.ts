@@ -1,9 +1,18 @@
 export type Animal = {
   id: number;
   name: string;
-  breed: string;
+  race: string;
   species: string;
   owner: string;
+  sex: string;
+  coat: string;
+  weight: string;
+  dateOfBirth: string;
+  size: "small" | "medium" | "large";
+  comments: string;
+  allergies: string;
+  castrated: string;
+  createdAt: Date;
 };
 
 export type Client = {
@@ -11,4 +20,5 @@ export type Client = {
   name: string;
   cpf: string;
   phone: string;
+  createdAt: Date;
 };
