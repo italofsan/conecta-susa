@@ -1,7 +1,8 @@
-import { ReactNode } from "react";
-
+import { ReactNode, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   AppBar,
+  Box,
   Drawer,
   IconButton,
   List,
@@ -22,12 +23,13 @@ import {
   StickyNote2Outlined as StickyNote2OutlinedIcon,
   AccountCircleOutlined as AccountCircleOutlinedIcon,
   MedicalServicesOutlined as MedicalServicesOutlinedIcon,
+  Menu as MenuIcon,
 } from "@mui/icons-material";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { useStyles } from "./styles";
 
 import logoImage from "../../assets/images/logo-image.png";
+import { Sidebar } from "./Sidebar";
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -147,18 +149,26 @@ const menuList = [
   },
 ];
 
+const drawerWidth = 240;
+
 export const AppLayout = ({ children }: AppLayoutProps) => {
   const { classes } = useStyles();
   const location = useLocation();
   const navigate = useNavigate();
 
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
   const drawer = (
     <div>
       <Toolbar style={{ backgroundColor: "#FFF" }}>
-        <Typography variant="h6" noWrap style={{ color: "black" }}>
+        {/* <Typography variant="h6" noWrap style={{ color: "black" }}>
           Conect@ SUSA
         </Typography>
-        <ExitIcon onClick={() => localStorage.clear()} />
+        <ExitIcon onClick={() => localStorage.clear()} /> */}
       </Toolbar>
       <List style={{ padding: 0 }}>
         {menuList.map((item) => (
@@ -195,7 +205,15 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBar}>
+      {/* <Sidebar /> */}
+      <AppBar
+        position="fixed"
+        // sx={{
+        //   width: { sm: `calc(100% - ${drawerWidth}px)` },
+        //   ml: { sm: `${drawerWidth}px` },
+        // }}
+        className={classes.appBar}
+      >
         <Toolbar
           style={{
             display: "flex",
@@ -204,6 +222,14 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
             justifyContent: "space-between",
           }}
         >
+          <IconButton
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
           <div
             style={{ width: 130, cursor: "pointer" }}
             onClick={() => navigate("/home")}
@@ -234,6 +260,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
           </div>
         </Toolbar>
       </AppBar>
+
       <nav className={classes.drawer}>
         <Drawer
           classes={{

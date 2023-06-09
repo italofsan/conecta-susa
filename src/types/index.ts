@@ -20,5 +20,6 @@ export type Client = {
   name: string;
   cpf: string;
   phone: string;
+  email: string;
   createdAt: Date;
 };

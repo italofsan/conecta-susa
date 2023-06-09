@@ -79,13 +79,13 @@ export const Registers = () => {
 
   return (
     <Grid container spacing={2}>
-      <Grid item lg={12}>
+      <Grid item xs={12} lg={12}>
         <Typography style={{ color: "#5A5A5A", fontSize: 24, fontWeight: 600 }}>
           Cadastros
         </Typography>
       </Grid>
 
-      <Grid item lg={3}>
+      <Grid item xs={12} lg={3}>
         <div style={{ display: "flex", flexDirection: "column" }}>
           {listOptions.map((option) => (
             <div

@@ -93,13 +93,13 @@ export const ListAnimals = () => {
 
   return (
     <Grid container spacing={2}>
-      <Grid item lg={3}>
+      <Grid item xs={12} lg={3}>
         <Typography style={{ color: "#5A5A5A", fontSize: 24, fontWeight: 600 }}>
           Animais
         </Typography>
       </Grid>
 
-      <Grid item lg={12}>
+      <Grid item xs={12} lg={12}>
         <Paper className={classes.paper}>
           <div className={classes.searchBarContainer}>
             <div className={classes.searchBarActionButtonsContainer}>
@@ -115,7 +115,7 @@ export const ListAnimals = () => {
         </Paper>
       </Grid>
 
-      <Grid item lg={12}>
+      <Grid item xs={12} lg={12}>
         <div style={{ height: 630, width: "100%" }}>
           <DataGrid
             rows={mockedListAnimal}

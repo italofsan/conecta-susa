@@ -22,6 +22,9 @@ export const useStyles = makeStyles()((theme) => {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
+      [theme.breakpoints.down("md")]: {
+        width: 300,
+      },
     },
     image: {
       width: "100%",

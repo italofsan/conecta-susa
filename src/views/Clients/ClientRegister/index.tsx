@@ -39,6 +39,7 @@ export const ClientRegister = () => {
     name: "",
     cpf: "",
     phone: "",
+    email: "",
   });
 
   const returnedTitlePage = (location: Location) => {
@@ -84,6 +85,7 @@ export const ClientRegister = () => {
         name: listClientCopy[0].name,
         cpf: listClientCopy[0].cpf,
         phone: listClientCopy[0].phone,
+        email: listClientCopy[0].email,
       });
     }
   }, [id]);
@@ -103,7 +105,7 @@ export const ClientRegister = () => {
       {({ handleChange, values }) => (
         <FormikForm>
           <Grid container spacing={2}>
-            <Grid item lg={12}>
+            <Grid item xs={12} lg={12}>
               <Typography
                 style={{ color: "#5A5A5A", fontSize: 24, fontWeight: 600 }}
               >
@@ -111,7 +113,7 @@ export const ClientRegister = () => {
               </Typography>
             </Grid>
 
-            <Grid item lg={12}>
+            <Grid item xs={12} lg={12}>
               <Paper className={classes.paper}>
                 <div className={classes.actionBar}>
                   <div className={classes.actionBarLeftContent}>
@@ -150,17 +152,17 @@ export const ClientRegister = () => {
               </Paper>
             </Grid>
 
-            <Grid item lg={12}>
+            <Grid item xs={12} lg={12}>
               <Paper className={classes.paper}>
                 <Grid container spacing={1} className={classes.formContainer}>
-                  <Grid item lg={12}>
+                  <Grid item xs={12} lg={12}>
                     <Typography className={classes.formSectionTitle}>
                       Dados
                     </Typography>
                   </Grid>
 
                   {values.id ? (
-                    <Grid item lg={3}>
+                    <Grid item xs={12} lg={3}>
                       <InputLabel className={classes.inputLabel}>ID</InputLabel>
                       <TextField
                         name="id"
@@ -172,7 +174,7 @@ export const ClientRegister = () => {
                       />
                     </Grid>
                   ) : null}
-                  <Grid item lg={3}>
+                  <Grid item xs={12} lg={3}>
                     <InputLabel className={classes.inputLabel}>
                       Nome*
                     </InputLabel>
@@ -189,7 +191,7 @@ export const ClientRegister = () => {
                       disabled={!inCreationOrEditing(location)}
                     />
                   </Grid>
-                  <Grid item lg={3}>
+                  <Grid item xs={12} lg={3}>
                     <InputLabel className={classes.inputLabel}>CPF*</InputLabel>
                     <TextField
                       name="cpf"
@@ -207,66 +209,14 @@ export const ClientRegister = () => {
                       }}
                     />
                   </Grid>
-                  {/* <Grid item lg={3}>
-                    <InputLabel className={classes.inputLabel}>RG*</InputLabel>
-                    <TextField
-                      name="document"
-                      value={values.document}
-                      onChange={handleChange}
-                      placeholder="RG*"
-                      variant="outlined"
-                      size="small"
-                      fullWidth
-                      required
-                      disabled={!inCreationOrEditing(location)}
-                    />
-                  </Grid> */}
 
-                  {/* <Grid item lg={3}>
-                    <InputLabel className={classes.inputLabel}>
-                      Status
-                    </InputLabel>
-                    <TextField
-                      name="status"
-                      value={values.status}
-                      onChange={handleChange}
-                      placeholder="Selecionar"
-                      variant="outlined"
-                      size="small"
-                      fullWidth
-                      select
-                      disabled={!inCreationOrEditing(location)}
-                    >
-                      {listStatus.map((status) => (
-                        <MenuItem key={status} value={status}>
-                          {status}
-                        </MenuItem>
-                      ))}
-                    </TextField>
-                  </Grid> */}
-
-                  <Grid item lg={12}>
+                  <Grid item xs={12} lg={12}>
                     <Typography className={classes.formSectionTitle}>
                       Contato
                     </Typography>
                   </Grid>
-                  {/* <Grid item lg={3}>
-                    <InputLabel className={classes.inputLabel}>
-                      E-mail
-                    </InputLabel>
-                    <TextField
-                      name="email"
-                      value={values.email}
-                      onChange={handleChange}
-                      placeholder="E-mail"
-                      variant="outlined"
-                      size="small"
-                      fullWidth
-                      required
-                      disabled={!inCreationOrEditing(location)}
-                    />
-                  </Grid> */}
-                  <Grid item lg={3}>
+
+                  <Grid item xs={12} lg={3}>
                     <InputLabel className={classes.inputLabel}>
                       Telefone
                     </InputLabel>
@@ -276,6 +226,7 @@ export const ClientRegister = () => {
                       onChange={handleChange}
                       variant="outlined"
                       size="small"
+                      placeholder="(99) 99999-9999"
                       fullWidth
                       color="success"
                       disabled={!inCreationOrEditing(location)}
@@ -284,38 +235,22 @@ export const ClientRegister = () => {
                       }}
                     />
                   </Grid>
-
-                  {/* <Grid item lg={12}>
-                      <Typography className={classes.formSectionTitle}>
-                        Atualização de Senha
-                      </Typography>
-                    </Grid>
-                    <Grid item lg={3}>
-                      <InputLabel className={classes.inputLabel}>
-                        Frequência de redefinição da senha
-                      </InputLabel>
-                      <TextField
-                        name="passwordResetFrequency"
-                        value={values.passwordResetFrequency}
-                        onChange={handleChange}
-                        variant="outlined"
-                        size="small"
-                        fullWidth
-                        select
-                        disabled={!inCreationOrEditing(location)}
-                      >
-                        <MenuItem value="Selecionar" disabled>
-                          Selecionar
-                        </MenuItem>
-                        {selectList.listPasswordResetFrequency.map(
-                          (frequency) => (
-                            <MenuItem key={frequency.id} value={frequency.id}>
-                              {frequency.value}
-                            </MenuItem>
-                          )
-                        )}
-                      </TextField>
-                    </Grid> */}
+                  <Grid item xs={12} lg={3}>
+                    <InputLabel className={classes.inputLabel}>
+                      E-mail
+                    </InputLabel>
+                    <TextField
+                      name="email"
+                      value={values.email}
+                      onChange={handleChange}
+                      placeholder="email@email.com"
+                      variant="outlined"
+                      size="small"
+                      fullWidth
+                      color="success"
+                      disabled={!inCreationOrEditing(location)}
+                    />
+                  </Grid>
                 </Grid>
               </Paper>
             </Grid>

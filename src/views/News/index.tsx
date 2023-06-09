@@ -8,7 +8,7 @@ export const News = () => {
   const { classes } = useStyles();
 
   return (
-    <Grid item lg={12} className={classes.container}>
+    <Grid item xs={12} lg={12} className={classes.container}>
       <div className={classes.content}>
         <div className={classes.imageContainer}>
           <img
