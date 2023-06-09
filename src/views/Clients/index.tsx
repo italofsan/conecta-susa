@@ -117,6 +117,7 @@ export const Clients = () => {
             columns={columns}
             disableRowSelectionOnClick
             hideFooterSelectedRowCount
+            hideFooterPagination
             // components={{
             //   Pagination: () => (
             //     <TablePagination

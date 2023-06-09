@@ -13,35 +13,35 @@ export const Animals = () => {
     },
     {
       option: "Histórico de atendimento",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/animals/service-history"),
     },
     {
       option: "Agendamento de consultas",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/animals/appointment-schedule"),
     },
     {
       option: "Controle de alimentação",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/animals/feeding-control"),
     },
     {
       option: "Controle de vacinação",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/animals/vaccination-control"),
     },
     {
       option: "Gerenciamento de medicamentos",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/animals/medication-management"),
     },
     {
       option: "Controle de adoção",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/animals/adoption-control"),
     },
     {
       option: "Controle de higiene e limpeza",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/animals/hygiene-control"),
     },
     {
       option: "Relatórios",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/animals/reports"),
     },
   ];
 

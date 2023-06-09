@@ -1,4 +1,7 @@
+import { useLocation } from "react-router-dom";
 import { Button, Typography, Dialog, DialogContent } from "@mui/material";
+
+import { returnedPhraseToModalDelete } from "../../../utils";
 
 import { useStyles } from "./styles";
 
@@ -14,6 +17,7 @@ export const ModalDelete = ({
   deleteFunction,
 }: ModalDeleteProps) => {
   const { classes } = useStyles();
+  const location = useLocation();
 
   return (
     <Dialog open={isModalOpen} onClose={closeModal}>
@@ -21,7 +25,7 @@ export const ModalDelete = ({
         <div>
           <Typography style={{ fontSize: 24, textAlign: "center" }}>
             Deseja realmente <strong>excluir</strong>
-            <br /> este item?
+            <br /> este {returnedPhraseToModalDelete(location)}?
           </Typography>
         </div>
       </DialogContent>

@@ -26,6 +26,7 @@ export const AppRoutes = () => {
       <AppLayout>
         <Routes>
           <Route path="/home" element={<Home />} />
+
           <Route path="/clients" element={<Clients />} />
           <Route path="/clients/new" element={<ClientRegister />} />
           <Route path="/clients/:id" element={<ClientRegister />} />
@@ -36,8 +37,34 @@ export const AppRoutes = () => {
           <Route path="/animals/:id" element={<AnimalRegister />} />
           <Route path="/animals/:id/edit" element={<AnimalRegister />} />
           <Route path="/animals/list-animals" element={<ListAnimals />} />
+          <Route path="/animals/service-history" element={<News />} />
+          <Route path="/animals/appointment-schedule" element={<News />} />
+          <Route path="/animals/feeding-control" element={<News />} />
+          <Route path="/animals/vaccination-control" element={<News />} />
+          <Route path="/animals/medication-management" element={<News />} />
+          <Route path="/animals/adoption-control" element={<News />} />
+          <Route path="/animals/hygiene-control" element={<News />} />
+          <Route path="/animals/reports" element={<News />} />
 
           <Route path="/registers" element={<Registers />} />
+          <Route path="/registers/establishments" element={<News />} />
+          <Route path="/registers/adopters" element={<News />} />
+          <Route path="/registers/volunteers" element={<News />} />
+          <Route path="/registers/donors" element={<News />} />
+          <Route path="/registers/suppliers" element={<News />} />
+          <Route path="/registers/events" element={<News />} />
+          <Route path="/registers/campaigns" element={<News />} />
+          <Route path="/registers/vaccines" element={<News />} />
+          <Route path="/registers/races" element={<News />} />
+          <Route path="/registers/species" element={<News />} />
+          <Route path="/registers/exams" element={<News />} />
+          <Route path="/registers/brands" element={<News />} />
+          <Route path="/registers/pathologies" element={<News />} />
+          <Route path="/registers/medical-prescriptions" element={<News />} />
+          <Route path="/registers/service-types" element={<News />} />
+          <Route path="/registers/products" element={<News />} />
+          <Route path="/registers/schedule" element={<News />} />
+
           <Route path="/financial" element={<News />} />
           <Route path="/products-and-services" element={<News />} />
           <Route path="/shop" element={<News />} />

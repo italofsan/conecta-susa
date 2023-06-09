@@ -17,12 +17,12 @@ export const HomePage = () => {
             style={{ width: "100%" }}
           />
         </div>
-        <Button
+        {/* <Button
           sx={{ color: "#black" }}
           onClick={() => alert("Funcionalidade em implementação")}
         >
           Cadastre-se
-        </Button>
+        </Button> */}
       </Grid>
       <Grid item lg={6} className={classes.homepageImageContainer}>
         <div style={{ width: 300 }}>

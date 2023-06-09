@@ -122,6 +122,7 @@ export const ListAnimals = () => {
             columns={columns}
             disableRowSelectionOnClick
             hideFooterSelectedRowCount
+            hideFooterPagination
             // components={{
             //   Pagination: () => (
             //     <TablePagination

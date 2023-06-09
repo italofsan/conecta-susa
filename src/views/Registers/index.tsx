@@ -9,71 +9,71 @@ export const Registers = () => {
   const listOptions = [
     {
       option: "Cadastro de Estabelecimentos",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/establishments"),
     },
     {
       option: "Cadastro de Adotantes",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/adopters"),
     },
     {
       option: "Cadastro de Voluntários",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/volunteers"),
     },
     {
       option: "Cadastro de Doadores",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/donors"),
     },
     {
       option: "Cadastro de Fornecedores",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/suppliers"),
     },
     {
       option: "Cadastro de Eventos",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/events"),
     },
     {
       option: "Cadastro de Campanhas",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/campaigns"),
     },
     {
       option: "Cadastro de Vacinas",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/vaccines"),
     },
     {
       option: "Cadastro de Raças",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/races"),
     },
     {
       option: "Cadastro de Espécies",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/species"),
     },
     {
       option: "Cadastro de Exames",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/exams"),
     },
     {
       option: "Cadastro de Marcas",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/brands"),
     },
     {
       option: "Cadastro de Patologias",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/pathologies"),
     },
     {
       option: "Cadastro de Receitas Médicas",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/medical-prescriptions"),
     },
     {
-      option: "Cadastro Tipos de Atendimentos",
-      onClick: () => alert("Funcionalidade em implementação"),
+      option: "Cadastro de Tipos de Atendimentos",
+      onClick: () => navigate("/registers/service-types"),
     },
     {
       option: "Cadastro de Produtos",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/products"),
     },
     {
       option: "Cadastro de Agendamento",
-      onClick: () => alert("Funcionalidade em implementação"),
+      onClick: () => navigate("/registers/schedule"),
     },
   ];
 
