@@ -12,10 +12,6 @@ export const Registers = () => {
       onClick: () => alert("Funcionalidade em implementação"),
     },
     {
-      option: "Cadastro de Animais",
-      onClick: () => navigate("/animals/list-animals"),
-    },
-    {
       option: "Cadastro de Adotantes",
       onClick: () => alert("Funcionalidade em implementação"),
     },
@@ -69,10 +65,6 @@ export const Registers = () => {
     },
     {
       option: "Cadastro Tipos de Atendimentos",
-      onClick: () => alert("Funcionalidade em implementação"),
-    },
-    {
-      option: "Cadastro Financeiro",
       onClick: () => alert("Funcionalidade em implementação"),
     },
     {

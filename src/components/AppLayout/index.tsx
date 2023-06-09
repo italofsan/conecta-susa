@@ -158,11 +158,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
         <Typography variant="h6" noWrap style={{ color: "black" }}>
           Conect@ SUSA
         </Typography>
-        <ExitIcon
-          onClick={() => {
-            localStorage.clear();
-          }}
-        />
+        <ExitIcon onClick={() => localStorage.clear()} />
       </Toolbar>
       <List style={{ padding: 0 }}>
         {menuList.map((item) => (

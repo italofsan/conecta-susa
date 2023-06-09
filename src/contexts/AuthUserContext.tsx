@@ -7,7 +7,7 @@ import {
   useEffect,
 } from "react";
 
-type Props = {
+type AuthUserContextProviderProps = {
   children: ReactNode;
 };
 
@@ -23,19 +23,21 @@ const initialState = {
 
 const AuthUserContext = createContext<PropsAuthUserContext>(initialState);
 
-const AuthUserContextProvider = ({ children }: Props) => {
-  const [isSigned, setIsSigned] = useState<boolean>(false);
+const AuthUserContextProvider = ({
+  children,
+}: AuthUserContextProviderProps) => {
+  const loadStorage = () => {
+    const storageIsAuthenticated = localStorage.getItem("signed");
+    if (storageIsAuthenticated) {
+      return Boolean(JSON.parse(storageIsAuthenticated));
+    }
+    return false;
+  };
+  const [isSigned, setIsSigned] = useState<boolean>(loadStorage());
 
-  useEffect(() => {
-    const loadStorageData = () => {
-      const storageIsAuthenticated = localStorage.getItem("signed");
-      if (storageIsAuthenticated) {
-        setIsSigned(JSON.parse(storageIsAuthenticated));
-      }
-    };
+  // useEffect(() => {
 
-    loadStorageData();
-  }, []);
+  // }, []);
 
   return (
     <AuthUserContext.Provider value={{ isSigned, setIsSigned }}>

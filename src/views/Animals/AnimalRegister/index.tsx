@@ -6,7 +6,9 @@ import {
   Location,
 } from "react-router-dom";
 import {
+  Backdrop,
   Button,
+  CircularProgress,
   Grid,
   IconButton,
   InputAdornment,
@@ -35,7 +37,7 @@ export const AnimalRegister = () => {
   const { classes } = useStyles();
   const { id } = useParams();
 
-  // const [locationState, setLocationState] = useState<any>();
+  const [open, setOpen] = useState(false);
 
   const [animalData, setAnimalData] = useState<AnimalData>({
     id: 0,
@@ -64,23 +66,29 @@ export const AnimalRegister = () => {
   };
 
   const addAnimal = async (animalData: AnimalData) => {
+    setOpen(true);
     try {
       setTimeout(() => {
         navigate("/animals/list-animals");
+        setOpen(false);
         successMessage("Animal adicionado com sucesso!");
       }, 1500);
     } catch (error) {
+      setOpen(false);
       errorMessage("Não foi possível adicionar animal");
     }
   };
 
   const updateAnimal = async (animalData: AnimalData) => {
+    setOpen(true);
     try {
       setTimeout(() => {
         navigate("/animals/list-animals");
+        setOpen(false);
         successMessage("Animal atualizado com sucesso!");
       }, 1500);
     } catch (error) {
+      setOpen(false);
       errorMessage("Não foi possível atualizar animal");
     }
   };
@@ -123,6 +131,13 @@ export const AnimalRegister = () => {
     >
       {({ handleChange, values }) => (
         <FormikForm>
+          <Backdrop
+            sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={open}
+          >
+            <CircularProgress color="inherit" />
+          </Backdrop>
+
           <Grid container spacing={2}>
             <Grid item lg={12}>
               <Typography
