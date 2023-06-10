@@ -2,8 +2,8 @@ import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
 import { ProductsAndServices } from "../views/ProductsAndServices";
 import { Registers } from "../views/Registers";
-import { ListSpecies } from "../views/Registers/ListSpecies";
-import { ListRaces } from "../views/Registers/ListRaces";
+import { ListSpecies } from "../views/Registers/Species/ListSpecies";
+import { ListRaces } from "../views/Registers/Races/ListRaces";
 import { Financial } from "../views/Financial";
 
 import { Animals } from "../views/Animals";
@@ -22,6 +22,8 @@ import { Home } from "../views/Home";
 import { AppLayout } from "../components/AppLayout";
 import { ResponsiveDrawer } from "../components/AppLayout/newIndex";
 import { News } from "../views/News";
+import { RaceRegister } from "../views/Registers/Races/RaceRegister";
+import { SpeciesRegister } from "../views/Registers/Species/SpeciesRegister";
 
 export const AppRoutes = () => {
   return (
@@ -58,8 +60,20 @@ export const AppRoutes = () => {
           <Route path="/registers/events" element={<News />} />
           <Route path="/registers/campaigns" element={<News />} />
           <Route path="/registers/vaccines" element={<News />} />
+
           <Route path="/registers/races" element={<ListRaces />} />
+          <Route path="/registers/races/new" element={<RaceRegister />} />
+          <Route path="/registers/races/:id" element={<RaceRegister />} />
+          <Route path="/registers/races/:id/edit" element={<RaceRegister />} />
+
           <Route path="/registers/species" element={<ListSpecies />} />
+          <Route path="/registers/species/new" element={<SpeciesRegister />} />
+          <Route path="/registers/species/:id" element={<SpeciesRegister />} />
+          <Route
+            path="/registers/species/:id/edit"
+            element={<SpeciesRegister />}
+          />
+
           <Route path="/registers/exams" element={<News />} />
           <Route path="/registers/brands" element={<News />} />
           <Route path="/registers/pathologies" element={<News />} />

@@ -1,16 +1,16 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
+import { Button, Grid, Paper, Typography } from "@mui/material";
 import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
-import { Add as AddIcon, Delete as DeleteIcon } from "@mui/icons-material";
+import { Add as AddIcon } from "@mui/icons-material";
 
-import { TableActions } from "../../../components/TableActions";
-import { successMessage } from "../../../components/Messages";
-import { mockedListSpecies } from "../../../database/species";
+import { TableActions } from "../../../../components/TableActions";
+import { successMessage } from "../../../../components/Messages";
+import { mockedListRaces } from "../../../../database/races";
 
 import { useStyles } from "./styles";
 
-export const ListSpecies = () => {
+export const ListRaces = () => {
   const { classes } = useStyles();
   const navigate = useNavigate();
 
@@ -20,6 +20,12 @@ export const ListSpecies = () => {
       {
         field: "name",
         headerName: "Nome",
+        flex: 1,
+        disableColumnMenu: true,
+      },
+      {
+        field: "species",
+        headerName: "Espécie",
         flex: 1,
         disableColumnMenu: true,
       },
@@ -61,9 +67,9 @@ export const ListSpecies = () => {
         renderCell: (params: GridRenderCellParams) => (
           <TableActions
             params={params}
-            viewFunction={() => navigate(`/registers/species/${params.row.id}`)}
+            viewFunction={() => navigate(`/registers/races/${params.row.id}`)}
             editFunction={() =>
-              navigate(`/registers/species/${params.row.id}/edit`)
+              navigate(`/registers/races/${params.row.id}/edit`)
             }
             deleteFunction={() => successMessage("Dado excluído com sucesso!")}
           />
@@ -77,7 +83,7 @@ export const ListSpecies = () => {
     <Grid container spacing={2}>
       <Grid item xs={12} lg={3}>
         <Typography style={{ color: "#5A5A5A", fontSize: 24, fontWeight: 600 }}>
-          Espécies
+          Raças
         </Typography>
       </Grid>
 
@@ -88,7 +94,7 @@ export const ListSpecies = () => {
               <Button
                 startIcon={<AddIcon />}
                 className={classes.buttonRegister}
-                onClick={() => navigate("/registers/species/new")}
+                onClick={() => navigate("/registers/races")}
               >
                 Cadastrar
               </Button>
@@ -100,7 +106,7 @@ export const ListSpecies = () => {
       <Grid item xs={12} lg={12}>
         <div style={{ height: 630, width: "100%" }}>
           <DataGrid
-            rows={mockedListSpecies}
+            rows={mockedListRaces}
             columns={columns}
             disableRowSelectionOnClick
             hideFooterSelectedRowCount

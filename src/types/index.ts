@@ -30,7 +30,7 @@ export type Species = {
   status: "Ativo" | "Inativo";
 };
 
-export type Races = {
+export type Race = {
   id: number;
   name: string;
   species: string;

@@ -1,6 +1,6 @@
-import { Races } from "../types";
+import { Race } from "../types";
 
-export const mockedListRaces: Races[] = [
+export const mockedListRaces: Race[] = [
   { id: 1, name: "Vira-lata", species: "Cachorro", status: "Ativo" },
   { id: 2, name: "Bulldog Francês", species: "Cachorro", status: "Ativo" },
   { id: 3, name: "Labrador Retriever", species: "Cachorro", status: "Ativo" },
