@@ -167,14 +167,14 @@ export const Login = () => {
                     Entrar
                   </Button>
 
-                  <div className={classes.resetPasswdContainer}>
+                  {/* <div className={classes.resetPasswdContainer}>
                     <Typography style={{ fontSize: 14 }}>
                       Esqueceu senha?
                     </Typography>
                     <Typography className={classes.resetPasswdText}>
                       Solicitar
                     </Typography>
-                  </div>
+                  </div> */}
                 </div>
               </Paper>
             </Grid>

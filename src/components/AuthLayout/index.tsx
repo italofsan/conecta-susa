@@ -18,6 +18,7 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 import { useStyles } from "./styles";
 
 import backgroundImage from "../../assets/images/background-image.png";
+import logoImage from "../../assets/images/logo-image.png";
 // import homepageImage from "../../assets/images/homepage-image.png";
 // import homepageTitleImage from "../../assets/images/homepage-title-image.png";
 
@@ -39,9 +40,24 @@ export const AuthLayout = ({ children }: AuthLayoutProps) => {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
+      <div
+        style={{
+          // width: 130,
+          cursor: "pointer",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+        onClick={() => navigate("/home")}
+      >
+        <img
+          src={logoImage}
+          alt="logo"
+          style={{
+            width: "92%",
+          }}
+        />
+      </div>
       <Divider />
       <List>
         <ListItem disablePadding onClick={() => navigate("/")}>

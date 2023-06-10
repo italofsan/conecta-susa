@@ -9,23 +9,20 @@ export const HomePage = () => {
 
   return (
     <Grid container style={{ height: "100%" }}>
-      <Grid item lg={6} className={classes.homepageTitleContainer}>
-        <div style={{ width: 500 }}>
+      <Grid item xs={12} lg={6} className={classes.homepageTitleContainer}>
+        <div className={classes.homepageTitleImage}>
           <img
             src={homepageTitleImage}
             alt="homepage-title"
             style={{ width: "100%" }}
           />
         </div>
-        {/* <Button
-          sx={{ color: "#black" }}
-          onClick={() => alert("Funcionalidade em implementação")}
-        >
-          Cadastre-se
-        </Button> */}
+        <div className={classes.homepageImageMobile}>
+          <img src={homepageImage} alt="homepage" style={{ width: "100%" }} />
+        </div>
       </Grid>
-      <Grid item lg={6} className={classes.homepageImageContainer}>
-        <div style={{ width: 300 }}>
+      <Grid item xs={12} lg={6} className={classes.homepageImageContainer}>
+        <div className={classes.homepageImage}>
           <img src={homepageImage} alt="homepage" />
         </div>
       </Grid>
