@@ -172,7 +172,7 @@ export const ResponsiveDrawer = ({ children }: ResponsiveDrawerProps) => {
             flexDirection: "column",
             justifyContent: "center",
           }}
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/clients")}
         >
           <img
             src={logoImage}

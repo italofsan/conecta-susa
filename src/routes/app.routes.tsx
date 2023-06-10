@@ -26,7 +26,7 @@ export const AppRoutes = () => {
     <BrowserRouter>
       <ResponsiveDrawer>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          {/* <Route path="/home" element={<Home />} /> */}
 
           <Route path="/clients" element={<Clients />} />
           <Route path="/clients/new" element={<ClientRegister />} />
@@ -71,7 +71,7 @@ export const AppRoutes = () => {
           <Route path="/shop" element={<News />} />
           <Route path="/reports" element={<News />} />
           <Route path="/profile" element={<News />} />
-          <Route path="*" element={<Navigate to="/home" />} />
+          <Route path="*" element={<Navigate to="/clients" />} />
         </Routes>
       </ResponsiveDrawer>
     </BrowserRouter>

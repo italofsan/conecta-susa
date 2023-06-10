@@ -106,18 +106,18 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 const menuList = [
-  {
-    itemTitle: "Início",
-    itemLocation: "/home",
-    icon: (
-      <HomeOutlinedIcon
-        fontSize="small"
-        style={{
-          marginRight: 12,
-        }}
-      />
-    ),
-  },
+  // {
+  //   itemTitle: "Início",
+  //   itemLocation: "/home",
+  //   icon: (
+  //     <HomeOutlinedIcon
+  //       fontSize="small"
+  //       style={{
+  //         marginRight: 12,
+  //       }}
+  //     />
+  //   ),
+  // },
   {
     itemTitle: "Clientes",
     itemLocation: "/clients",

@@ -36,18 +36,18 @@ interface AppLayoutProps {
 }
 
 const menuList = [
-  {
-    itemTitle: "Início",
-    itemLocation: "/home",
-    icon: (
-      <HomeOutlinedIcon
-        fontSize="small"
-        style={{
-          marginRight: 12,
-        }}
-      />
-    ),
-  },
+  // {
+  //   itemTitle: "Início",
+  //   itemLocation: "/home",
+  //   icon: (
+  //     <HomeOutlinedIcon
+  //       fontSize="small"
+  //       style={{
+  //         marginRight: 12,
+  //       }}
+  //     />
+  //   ),
+  // },
   {
     itemTitle: "Clientes",
     itemLocation: "/clients",
@@ -232,7 +232,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
           </IconButton>
           <div
             style={{ width: 130, cursor: "pointer" }}
-            onClick={() => navigate("/home")}
+            onClick={() => navigate("/clients")}
           >
             <img src={logoImage} alt="logo" style={{ width: "100%" }} />
           </div>

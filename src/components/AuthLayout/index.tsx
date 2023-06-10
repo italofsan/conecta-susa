@@ -48,7 +48,7 @@ export const AuthLayout = ({ children }: AuthLayoutProps) => {
           flexDirection: "column",
           justifyContent: "center",
         }}
-        onClick={() => navigate("/home")}
+        onClick={() => navigate("/clients")}
       >
         <img
           src={logoImage}
