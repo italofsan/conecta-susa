@@ -2,6 +2,8 @@ import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
 import { ProductsAndServices } from "../views/ProductsAndServices";
 import { Registers } from "../views/Registers";
+import { ListSpecies } from "../views/Registers/ListSpecies";
+import { ListRaces } from "../views/Registers/ListRaces";
 import { Financial } from "../views/Financial";
 
 import { Animals } from "../views/Animals";
@@ -56,8 +58,8 @@ export const AppRoutes = () => {
           <Route path="/registers/events" element={<News />} />
           <Route path="/registers/campaigns" element={<News />} />
           <Route path="/registers/vaccines" element={<News />} />
-          <Route path="/registers/races" element={<News />} />
-          <Route path="/registers/species" element={<News />} />
+          <Route path="/registers/races" element={<ListRaces />} />
+          <Route path="/registers/species" element={<ListSpecies />} />
           <Route path="/registers/exams" element={<News />} />
           <Route path="/registers/brands" element={<News />} />
           <Route path="/registers/pathologies" element={<News />} />

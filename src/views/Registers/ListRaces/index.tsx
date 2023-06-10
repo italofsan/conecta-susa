@@ -6,17 +6,17 @@ import { Add as AddIcon, Delete as DeleteIcon } from "@mui/icons-material";
 
 import { TableActions } from "../../../components/TableActions";
 import { successMessage } from "../../../components/Messages";
-import { mockedListAnimal } from "../../../database/animals";
+import { mockedListRaces } from "../../../database/races";
 
 import { useStyles } from "./styles";
 
-export const ListAnimals = () => {
+export const ListRaces = () => {
   const { classes } = useStyles();
   const navigate = useNavigate();
 
   const columns: GridColDef[] = useMemo(
     () => [
-      { field: "id", headerName: "ID", flex: 0.2, disableColumnMenu: true },
+      { field: "id", headerName: "ID", flex: 0.1, disableColumnMenu: true },
       {
         field: "name",
         headerName: "Nome",
@@ -30,59 +30,47 @@ export const ListAnimals = () => {
         disableColumnMenu: true,
       },
       {
-        field: "race",
-        headerName: "Raça",
-        flex: 1,
+        field: "status",
+        headerName: "Status",
+        width: 200,
         disableColumnMenu: true,
-      },
-      {
-        field: "owner",
-        headerName: "Proprietário",
-        flex: 1,
-        disableColumnMenu: true,
-      },
-      // {
-      //   field: "status",
-      //   headerName: "Status",
-      //   width: 200,
-      //   disableColumnMenu: true,
-      //   hideSortIcons: true,
-      //   renderCell: (params: GridRenderCellParams) => (
-      //     <Typography
-      //       style={{
-      //         display: "flex",
-      //         flexDirection: "row",
-      //         justifyContent: "center",
-      //         alignItems: "center",
+        hideSortIcons: true,
+        renderCell: (params: GridRenderCellParams) => (
+          <Typography
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
 
-      //         width: "100%",
-      //         padding: "4px 0px",
-      //         borderRadius: "4px",
+              width: "100%",
+              padding: "4px 0px",
+              borderRadius: "4px",
 
-      //         fontSize: 12,
-      //         color: "#252525",
-      //         opacity: "0.8",
-      //         backgroundColor: (params.value as Boolean)
-      //           ? "#6FED8B"
-      //           : "#FF3C40",
-      //       }}
-      //     >
-      //       {(params.value as Boolean) ? "Ativo" : "Inativo"}
-      //     </Typography>
-      //   ),
-      // },
+              fontSize: 12,
+              color: "#252525",
+              opacity: "0.8",
+              backgroundColor: params.value === "Ativo" ? "#6FED8B" : "#FF3C40",
+            }}
+          >
+            {params.value}
+          </Typography>
+        ),
+      },
       {
         field: "actions",
         headerName: "Ações",
-        flex: 0.4,
+        flex: 0.1,
         disableColumnMenu: true,
         hideSortIcons: true,
         sortable: false,
         renderCell: (params: GridRenderCellParams) => (
           <TableActions
             params={params}
-            viewFunction={() => navigate(`/animals/${params.row.id}`)}
-            editFunction={() => navigate(`/animals/${params.row.id}/edit`)}
+            viewFunction={() => navigate(`/registers/races/${params.row.id}`)}
+            editFunction={() =>
+              navigate(`/registers/races/${params.row.id}/edit`)
+            }
             deleteFunction={() => successMessage("Dado excluído com sucesso!")}
           />
         ),
@@ -95,7 +83,7 @@ export const ListAnimals = () => {
     <Grid container spacing={2}>
       <Grid item xs={12} lg={3}>
         <Typography style={{ color: "#5A5A5A", fontSize: 24, fontWeight: 600 }}>
-          Animais
+          Raças
         </Typography>
       </Grid>
 
@@ -106,7 +94,7 @@ export const ListAnimals = () => {
               <Button
                 startIcon={<AddIcon />}
                 className={classes.buttonRegister}
-                onClick={() => navigate("/animals/new")}
+                onClick={() => navigate("/registers/races")}
               >
                 Cadastrar
               </Button>
@@ -118,20 +106,11 @@ export const ListAnimals = () => {
       <Grid item xs={12} lg={12}>
         <div style={{ height: 630, width: "100%" }}>
           <DataGrid
-            rows={mockedListAnimal}
+            rows={mockedListRaces}
             columns={columns}
             disableRowSelectionOnClick
             hideFooterSelectedRowCount
             hideFooterPagination
-            // components={{
-            //   Pagination: () => (
-            //     <TablePagination
-            //       count={pagination.pageQuantity}
-            //       page={pagination.currentPage}
-            //       onChange={handleChangePagination}
-            //     />
-            //   ),
-            // }}
           />
         </div>
       </Grid>

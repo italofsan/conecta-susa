@@ -27,7 +27,7 @@ import { InputMask } from "../../../components/InputMask";
 import { useStyles } from "./styles";
 import { inCreationOrEditing, onlyNumbers } from "../../../utils";
 import { Animal } from "../../../types";
-import { mockedListAnimal } from "../../../database";
+import { mockedListAnimal } from "../../../database/animals";
 
 type AnimalData = Omit<Animal, "createdAt">;
 

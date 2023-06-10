@@ -23,3 +23,16 @@ export type Client = {
   email: string;
   createdAt: Date;
 };
+
+export type Species = {
+  id: number;
+  name: string;
+  status: "Ativo" | "Inativo";
+};
+
+export type Races = {
+  id: number;
+  name: string;
+  species: string;
+  status: "Ativo" | "Inativo";
+};

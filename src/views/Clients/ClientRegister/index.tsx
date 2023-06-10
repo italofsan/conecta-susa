@@ -24,7 +24,7 @@ import { InputMask } from "../../../components/InputMask";
 import { useStyles } from "./styles";
 import { inCreationOrEditing, onlyNumbers } from "../../../utils";
 import { Client } from "../../../types";
-import { mockedListClient } from "../../../database";
+import { mockedListClient } from "../../../database/clients";
 
 type ClientData = Omit<Client, "createdAt">;
 

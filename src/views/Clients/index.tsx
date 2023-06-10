@@ -4,11 +4,11 @@ import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
 import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import { Add as AddIcon, Delete as DeleteIcon } from "@mui/icons-material";
 
-import { useStyles } from "./styles";
-import { Client } from "../../types";
 import { TableActions } from "../../components/TableActions";
-import { mockedListClient } from "../../database";
 import { successMessage } from "../../components/Messages";
+import { mockedListClient } from "../../database/clients";
+
+import { useStyles } from "./styles";
 
 export const Clients = () => {
   const { classes } = useStyles();
