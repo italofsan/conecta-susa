@@ -18,12 +18,13 @@ import { Shop } from "../views/Shop";
 import { Home } from "../views/Home";
 
 import { AppLayout } from "../components/AppLayout";
+import { ResponsiveDrawer } from "../components/AppLayout/newIndex";
 import { News } from "../views/News";
 
 export const AppRoutes = () => {
   return (
     <BrowserRouter>
-      <AppLayout>
+      <ResponsiveDrawer>
         <Routes>
           <Route path="/home" element={<Home />} />
 
@@ -72,7 +73,7 @@ export const AppRoutes = () => {
           <Route path="/profile" element={<News />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
-      </AppLayout>
+      </ResponsiveDrawer>
     </BrowserRouter>
   );
 };

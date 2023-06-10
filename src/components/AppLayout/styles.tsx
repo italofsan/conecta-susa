@@ -9,8 +9,17 @@ export const useStyles = makeStyles()((theme) => {
       height: "100vh",
     },
     appBar: {
-      backgroundColor: "#FFF",
-      zIndex: theme.zIndex.drawer + 1,
+      backgroundColor: "#16A34A",
+      // zIndex: theme.zIndex.drawer + 1,
+    },
+    toolbar: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      [theme.breakpoints.up("sm")]: {
+        width: "100%",
+        justifyContent: "flex-end",
+      },
     },
     menuButton: {
       marginRight: theme.spacing(2),
