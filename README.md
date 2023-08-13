@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+## Conecta SUSA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This is a frontend project coded by Italo Santos. This web app allows companies and customers to register animals and follow up on vaccines, diseases, consultations.
 
-### `yarn start`
+It is possible to see a production preview https://conectasusa.netlify.app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Setup
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+  # To run this project follow the steps below
 
-### `yarn test`
+  # Open CMD
+  # Put these commands at the command prompt 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  # Clone this repository:
+  $ git clone https://github.com/italofsan/conecta-susa.git
 
-### `yarn build`
+  # Go to the folder:
+  $ cd conecta-susa
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  # Install all dependencies:
+  $ yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  # See development preview
+  $ yarn start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Website
+![image](https://github.com/italofsan/conecta-susa/assets/66754958/413c9fe6-0727-4856-8685-5ee84acf1d1d)
+![image](https://github.com/italofsan/conecta-susa/assets/66754958/c50aec52-0f14-418d-98ed-6618c525dcf9)
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Mobile Responsive Website
+![image](https://github.com/italofsan/conecta-susa/assets/66754958/5d84f3b0-7c5e-4a2b-8646-847894389fd9)
+![image](https://github.com/italofsan/conecta-susa/assets/66754958/4839966c-f019-40bd-867e-d37eab20b8a9)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies
+- [TypeScript](https://www.typescriptlang.org/)
+- [Material UI](https://material-ui.com)
+- [React Router Dom](https://reactrouter.com/web/guides/quick-start)
+- [Toastify](https://fkhadra.github.io/react-toastify/introduction)
+- [Axios](https://github.com/axios/axios#readme)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Create React App
 
-## Learn More
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can find the most recent version of the Create React App guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
