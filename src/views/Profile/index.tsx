@@ -1,3 +1,5 @@
+import { Container } from "../../components/Screen/Container";
+
 export const Profile = () => {
-  return <div>Profile</div>;
+  return <Container>Profile</Container>;
 };

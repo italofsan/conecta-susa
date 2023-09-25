@@ -10,7 +10,6 @@ import {
   Grid,
   IconButton,
   InputLabel,
-  MenuItem,
   Paper,
   TextField,
   Typography,
@@ -22,9 +21,10 @@ import { errorMessage, successMessage } from "../../../components/Messages";
 import { InputMask } from "../../../components/InputMask";
 
 import { useStyles } from "./styles";
-import { inCreationOrEditing, onlyNumbers } from "../../../utils";
+import { inCreationOrEditing } from "../../../utils";
 import { Client } from "../../../types";
 import { mockedListClient } from "../../../database/clients";
+import { Container } from "../../../components/Screen/Container";
 
 type ClientData = Omit<Client, "createdAt">;
 
@@ -104,7 +104,7 @@ export const ClientRegister = () => {
     >
       {({ handleChange, values }) => (
         <FormikForm>
-          <Grid container spacing={2}>
+          <Container>
             <Grid item xs={12} lg={12}>
               <Typography
                 style={{ color: "#5A5A5A", fontSize: 24, fontWeight: 600 }}
@@ -254,11 +254,9 @@ export const ClientRegister = () => {
                 </Grid>
               </Paper>
             </Grid>
-          </Grid>
+          </Container>
         </FormikForm>
       )}
     </Formik>
   );
 };
-
-const listStatus = ["Ativo", "Inativo"];

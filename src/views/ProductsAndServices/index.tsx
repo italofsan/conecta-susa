@@ -1,3 +1,5 @@
+import { Container } from "../../components/Screen/Container";
+
 export const ProductsAndServices = () => {
-  return <div>ProductsAndServices</div>;
+  return <Container>ProductsAndServices</Container>;
 };

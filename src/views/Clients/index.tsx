@@ -1,14 +1,15 @@
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
+import { Button, Grid, Paper, Typography } from "@mui/material";
 import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
-import { Add as AddIcon, Delete as DeleteIcon } from "@mui/icons-material";
+import { Add as AddIcon } from "@mui/icons-material";
 
 import { TableActions } from "../../components/TableActions";
 import { successMessage } from "../../components/Messages";
 import { mockedListClient } from "../../database/clients";
 
 import { useStyles } from "./styles";
+import { Container } from "../../components/Screen/Container";
 
 export const Clients = () => {
   const { classes } = useStyles();
@@ -35,37 +36,6 @@ export const Clients = () => {
         flex: 1,
         disableColumnMenu: true,
       },
-
-      // {
-      //   field: "status",
-      //   headerName: "Status",
-      //   width: 200,
-      //   disableColumnMenu: true,
-      //   hideSortIcons: true,
-      //   renderCell: (params: GridRenderCellParams) => (
-      //     <Typography
-      //       style={{
-      //         display: "flex",
-      //         flexDirection: "row",
-      //         justifyContent: "center",
-      //         alignItems: "center",
-
-      //         width: "100%",
-      //         padding: "4px 0px",
-      //         borderRadius: "4px",
-
-      //         fontSize: 12,
-      //         color: "#252525",
-      //         opacity: "0.8",
-      //         backgroundColor: (params.value as Boolean)
-      //           ? "#6FED8B"
-      //           : "#FF3C40",
-      //       }}
-      //     >
-      //       {(params.value as Boolean) ? "Ativo" : "Inativo"}
-      //     </Typography>
-      //   ),
-      // },
       {
         field: "actions",
         headerName: "Ações",
@@ -87,7 +57,7 @@ export const Clients = () => {
   );
 
   return (
-    <Grid container spacing={2}>
+    <Container>
       <Grid item xs={12} lg={3}>
         <Typography style={{ color: "#5A5A5A", fontSize: 24, fontWeight: 600 }}>
           Clientes
@@ -118,18 +88,9 @@ export const Clients = () => {
             disableRowSelectionOnClick
             hideFooterSelectedRowCount
             hideFooterPagination
-            // components={{
-            //   Pagination: () => (
-            //     <TablePagination
-            //       count={pagination.pageQuantity}
-            //       page={pagination.currentPage}
-            //       onChange={handleChangePagination}
-            //     />
-            //   ),
-            // }}
           />
         </div>
       </Grid>
-    </Grid>
+    </Container>
   );
 };

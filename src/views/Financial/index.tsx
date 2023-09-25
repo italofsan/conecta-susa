@@ -1,3 +1,5 @@
+import { Container } from "../../components/Screen/Container";
+
 export const Financial = () => {
-  return <div>Financial</div>;
+  return <Container>Financial</Container>;
 };

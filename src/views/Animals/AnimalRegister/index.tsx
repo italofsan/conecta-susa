@@ -28,6 +28,7 @@ import { useStyles } from "./styles";
 import { inCreationOrEditing, onlyNumbers } from "../../../utils";
 import { Animal } from "../../../types";
 import { mockedListAnimal } from "../../../database/animals";
+import { Container } from "../../../components/Screen/Container";
 
 type AnimalData = Omit<Animal, "createdAt">;
 
@@ -138,7 +139,7 @@ export const AnimalRegister = () => {
             <CircularProgress color="inherit" />
           </Backdrop>
 
-          <Grid container spacing={2}>
+          <Container>
             <Grid item lg={12}>
               <Typography
                 style={{ color: "#5A5A5A", fontSize: 24, fontWeight: 600 }}
@@ -462,7 +463,7 @@ export const AnimalRegister = () => {
                 </Grid>
               </Paper>
             </Grid>
-          </Grid>
+          </Container>
         </FormikForm>
       )}
     </Formik>

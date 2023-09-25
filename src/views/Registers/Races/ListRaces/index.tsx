@@ -9,6 +9,7 @@ import { successMessage } from "../../../../components/Messages";
 import { mockedListRaces } from "../../../../database/races";
 
 import { useStyles } from "./styles";
+import { Container } from "../../../../components/Screen/Container";
 
 export const ListRaces = () => {
   const { classes } = useStyles();
@@ -80,7 +81,7 @@ export const ListRaces = () => {
   );
 
   return (
-    <Grid container spacing={2}>
+    <Container>
       <Grid item xs={12} lg={3}>
         <Typography style={{ color: "#5A5A5A", fontSize: 24, fontWeight: 600 }}>
           Raças
@@ -114,6 +115,6 @@ export const ListRaces = () => {
           />
         </div>
       </Grid>
-    </Grid>
+    </Container>
   );
 };

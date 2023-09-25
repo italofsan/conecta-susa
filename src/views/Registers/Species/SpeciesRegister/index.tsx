@@ -23,6 +23,7 @@ import { inCreationOrEditing } from "../../../../utils";
 import { Species } from "../../../../types";
 
 import { useStyles } from "./styles";
+import { Container } from "../../../../components/Screen/Container";
 
 export const SpeciesRegister = () => {
   const location = useLocation();
@@ -96,7 +97,7 @@ export const SpeciesRegister = () => {
     >
       {({ handleChange, values }) => (
         <FormikForm>
-          <Grid container spacing={2}>
+          <Container>
             <Grid item xs={12} lg={12}>
               <Typography
                 style={{ color: "#5A5A5A", fontSize: 24, fontWeight: 600 }}
@@ -186,11 +187,9 @@ export const SpeciesRegister = () => {
                 </Grid>
               </Paper>
             </Grid>
-          </Grid>
+          </Container>
         </FormikForm>
       )}
     </Formik>
   );
 };
-
-const listStatus = ["Ativo", "Inativo"];

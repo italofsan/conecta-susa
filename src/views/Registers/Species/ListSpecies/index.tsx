@@ -9,6 +9,7 @@ import { successMessage } from "../../../../components/Messages";
 import { mockedListSpecies } from "../../../../database/species";
 
 import { useStyles } from "./styles";
+import { Container } from "../../../../components/Screen/Container";
 
 export const ListSpecies = () => {
   const { classes } = useStyles();
@@ -74,7 +75,7 @@ export const ListSpecies = () => {
   );
 
   return (
-    <Grid container spacing={2}>
+    <Container>
       <Grid item xs={12} lg={3}>
         <Typography style={{ color: "#5A5A5A", fontSize: 24, fontWeight: 600 }}>
           Espécies
@@ -108,6 +109,6 @@ export const ListSpecies = () => {
           />
         </div>
       </Grid>
-    </Grid>
+    </Container>
   );
 };
